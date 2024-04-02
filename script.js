@@ -16,6 +16,10 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Collect employee data
 const collectEmployees = function() {
+
+  let cont = true;
+while(cont===true){
+
   let firstNameCell = document.createElement("td");
   let lastNameCell = document.createElement("td");
   let salaryCell = document.createElement("td");
@@ -25,6 +29,7 @@ const collectEmployees = function() {
   fn = prompt(`What is employees frist name?`);
   ln = prompt(`What is employees last name?`);
   s = prompt(`What is employees salary?`);
+  
 
 let employee = {
   firstName: fn,
@@ -38,6 +43,7 @@ employeesArray.push(employee);
   lastNameCell.append(employee.lastName);
   salaryCell.append(employee.salary);
 
+
   //employeesArray.push(firstName, lastName, salary);
 //  console.log(employeesArray);
 
@@ -48,12 +54,18 @@ employeesArray.push(employee);
   tbody.appendChild(newRow);
   console.log(tbody)
 
+  cont = confirm(`Would you like to continue?`);
+}
+
+
   let salariesArray = employeesArray.map(e=>{
     return +e.salary;
   })
   console.log(displayAverageSalary(salariesArray));
 
   getRandomEmployee(employeesArray);
+
+
 }
 
 
