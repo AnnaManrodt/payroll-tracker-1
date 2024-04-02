@@ -1,10 +1,11 @@
 let firstName;
 let lastName;
 let salary;
-let salariesArray = [];
 
 let tbody = document.querySelector("tbody");
 
+
+let employeesArray =[];
 
 
 const employeeTable = document.getElementById("employee-table");
@@ -21,15 +22,21 @@ const collectEmployees = function() {
 
   const newRow = document.createElement("tr");
     // TODO: Get user input to create and return an array of employee objects
-  firstName = prompt(`What is employees frist name?`);
-  lastName = prompt(`What is employees last name?`);
-  salary = prompt(`What is employees salary?`);
+  fn = prompt(`What is employees frist name?`);
+  ln = prompt(`What is employees last name?`);
+  s = prompt(`What is employees salary?`);
 
-  salariesArray.push(salary)  // convert salary to a number  google: javascript string to number
+let employee = {
+  firstName: fn,
+  lastName: ln,
+salary: s,
+}
 
-  firstNameCell.textContent = firstName;
-  lastNameCell.append(lastName);
-  salaryCell.append(salary);
+employeesArray.push(employee);
+
+  firstNameCell.append(employee.firstName);
+  lastNameCell.append(employee.lastName);
+  salaryCell.append(employee.salary);
 
   //employeesArray.push(firstName, lastName, salary);
 //  console.log(employeesArray);
@@ -40,20 +47,39 @@ const collectEmployees = function() {
 
   tbody.appendChild(newRow);
   console.log(tbody)
+
+  let salariesArray = employeesArray.map(e=>{
+    return +e.salary;
+  })
+  console.log(displayAverageSalary(salariesArray));
+
+  getRandomEmployee(employeesArray);
 }
+
+
+
+//convert salariesarrary string into emplloyees array num
+
 
 
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
-  // TODO: Calculate and display the average salary
+  let arraySum =0;
+  for(let i=0; i< employeesArray.length; i++){
+  arraySum += employeesArray[i];
+  }
+  return arraySum/employeesArray.length;
 }
+
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
- //const /v Math.floor(Math.random() * )
+ const random = Math.floor(Math.random() * employeesArray.length);
+  console.log("You have been chosen" ,  employeesArray[random]);
 }
+
 
 /*
   ====================
