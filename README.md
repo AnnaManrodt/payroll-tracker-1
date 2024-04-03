@@ -17,5 +17,5 @@ Thank you to my coding boot camp for giving me the knowledge to complete this ch
 Thanks to gary for extra homework help!
 
 ## Link
-To see the deployed version of this page, [click here](https://annamanrodt.github.io/semantic-html/)
+To see the deployed version of this page, [click here](https://annamanrodt.github.io/payroll-tracker-1/)
 
