@@ -64,7 +64,7 @@ while(cont===true){
   console.log(`Average salary is: ${displayAverageSalary(salariesArray)}`);
 
   let random = getRandomEmployee(employeesArray);
-  console.log(`title: ${random}`)
+  
 
 }
 
