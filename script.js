@@ -31,40 +31,40 @@ while(cont===true){
   s = prompt(`What is employees salary?`);
   
 
-let employee = {
-  firstName: fn,
-  lastName: ln,
-salary: s,
-}
+  let employee = {
+    firstName: fn,
+    lastName: ln,
+     salary: s,
+  }
 
-employeesArray.push(employee);
+  employeesArray.push(employee);
 
-  firstNameCell.append(employee.firstName);
-  lastNameCell.append(employee.lastName);
-  salaryCell.append(employee.salary);
+    firstNameCell.append(employee.firstName);
+    lastNameCell.append(employee.lastName);
+    salaryCell.append(employee.salary);
 
 
-  //employeesArray.push(firstName, lastName, salary);
-//  console.log(employeesArray);
+    //employeesArray.push(firstName, lastName, salary);
+  //  console.log(employeesArray);
 
-  newRow.append(firstNameCell);
-  newRow.append(lastNameCell);
-  newRow.append(salaryCell);
+    newRow.append(firstNameCell);
+    newRow.append(lastNameCell);
+    newRow.append(salaryCell);
 
-  tbody.appendChild(newRow);
-  console.log(tbody)
+    tbody.appendChild(newRow);
+    console.log(tbody)
 
-  cont = confirm(`Would you like to continue?`);
+    cont = confirm(`Would you like to continue?`);
 }
 
 
   let salariesArray = employeesArray.map(e=>{
     return +e.salary;
   })
-  console.log(displayAverageSalary(salariesArray));
+  console.log(`Average salary is: ${displayAverageSalary(salariesArray)}`);
 
-  getRandomEmployee(employeesArray);
-
+  let random = getRandomEmployee(employeesArray);
+  console.log(`title: ${random}`)
 
 }
 
@@ -88,9 +88,15 @@ const displayAverageSalary = function(employeesArray) {
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
- const random = Math.floor(Math.random() * employeesArray.length);
-  console.log("You have been chosen" ,  employeesArray[random]);
+ const randomIndex = Math.floor(Math.random() * employeesArray.length);
+  const getRandomEmployee = employeesArray[randomIndex]
+  console.log(`You have been chosen ,  ${getRandomEmployee.firstName}  ${getRandomEmployee.lastName}`);
 }
+
+
+
+
+
 
 
 /*
